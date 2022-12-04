@@ -4,7 +4,7 @@
 
 ## SRResNet 
  다음 링크의 소스를 사용하였다. [SRGAN-PyTorch](https://github.com/dongheehand/SRGAN-PyTorch.git)
-다음의 깃허브 레포지토리를 복제하면된다.
+<p/>다음의 깃허브 레포지토리를 복제하면된다.</p>
 ```
 git clone https://github.com/dongheehand/SRGAN-PyTorch.git
 ```
