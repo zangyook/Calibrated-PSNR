@@ -1,4 +1,4 @@
-# Calibrated-PSNR_2022_12
+# Machine Learning(2) Team_Project+2022_12 (김정연, 여동규, 이예랑, 홍준서)
 #
 ## How to use Metrics 
 ### Sources
@@ -13,7 +13,7 @@ IQA-Pytorch install
 - metrics.py 파일을 이용하여 결과를 내면 된다.
 - save_metrics.py
  원본 고화질 영상과 복원시킨 영상이 저장된 파일 경로를 각각 hrdirroot, srdirroot에 적어주고 metric 수치를 기록할 csv파일 경로를 save_dir에 입력해주면 된다.
-# Machine Learning(2) Team_Project+2022_12 (김정연, 여동규, 이예랑, 홍준서)
+
 ## Dataset 
  다음 링크에서 다운로드 받을 수 있다.
 ### Train
