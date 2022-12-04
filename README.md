@@ -34,7 +34,7 @@ python test.py -opt options/test/test_RankSRGAN.yml
 ```
 5. The results are in `./results` folder.
 
-## How to Train
+# How to Train
 ## Train Ranker
 1. Download [DIV2K](https://data.vision.ee.ethz.ch/cvl/DIV2K/) and [Flickr2K](https://github.com/LimBee/NTIRE2017) from [Google Drive](https://drive.google.com/drive/folders/1B-uaxvV9qeuQ-t7MFiN1oEdA6dKnj2vW?usp=sharing) or [Baidu Drive](https://pan.baidu.com/s/1CFIML6KfQVYGZSNFrhMXmA)
 2. Generate rank dataset [./datasets/generate_rankdataset/](datasets/generate_rankdataset)
@@ -42,7 +42,7 @@ python test.py -opt options/test/test_RankSRGAN.yml
 ```c++
 python train_rank.py -opt options/train/train_Ranker.yml
 ```
-### Train RankSRGAN
+## Train RankSRGAN
 We use a PSNR-oriented pretrained SR model to initialize the parameters for better quality.
 
 1. Prepare datasets, usually the DIV2K dataset. 
