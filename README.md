@@ -7,12 +7,12 @@
 [S-aiueo32/lpips-pytorch: A simple and useful implementation of LPIPS. (github.com)](https://github.com/S-aiueo32/lpips-pytorch)
 -save_metrics.py
  원본 고화질 영상과 복원시킨 영상이 저장된 파일 경로를 각각 hrdirroot, srdirroot에 적어주고 metric 수치를 기록할 csv파일 경로를 save_dir에 입력해준다. 
-
+#  
 ### Dataset 파일
 -	GT2LR,py
 고화질의 원본 영상만 존재하는 데이터세트의 저화질 영상을 만듦.
 hr_root는 고화질 원본 영상만 있는 파일 경로이고 save_root는 저화질 영상을 저장할 파일 경로를 설정해주면 된다.
-
+#  
 ### SRGAN파일
 -	Srgan_config
 Upscale_factor와 mode(train or test), device를 정해준다. 
