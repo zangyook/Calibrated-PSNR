@@ -1,11 +1,11 @@
 # PSNR-HJS-All-he-did
-
+#
 ### Metrics 파일
--IQA-Pytorch install
+- IQA-Pytorch install
 [chaofengc/IQA-PyTorch: PyTorch Toolbox for Image Quality Assessment, including LPIPS, FID, NIQE, NRQM(Ma), MUSIQ, NIMA, DBCNN, WaDIQaM, BRISQUE, PI and more... (github.com)](https://github.com/chaofengc/IQA-PyTorch)
--lpips-pytorch install 
+- lpips-pytorch install 
 [S-aiueo32/lpips-pytorch: A simple and useful implementation of LPIPS. (github.com)](https://github.com/S-aiueo32/lpips-pytorch)
--save_metrics.py
+- save_metrics.py
  원본 고화질 영상과 복원시킨 영상이 저장된 파일 경로를 각각 hrdirroot, srdirroot에 적어주고 metric 수치를 기록할 csv파일 경로를 save_dir에 입력해준다. 
 #  
 ### Dataset 파일
