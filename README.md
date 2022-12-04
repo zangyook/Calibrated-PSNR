@@ -1,4 +1,4 @@
-# Calibrated-PSNR_2022_12
+# Machine Learning(2) Team_Project+2022_12 (김정연, 여동규, 이예랑, 홍준서)
 ## Dataset 
  다음 링크에서 다운로드 받을 수 있다.
 
