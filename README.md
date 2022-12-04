@@ -4,7 +4,7 @@
 
 ## SRResNet 
  다음 링크의 소스를 사용하였다. [SRGAN-PyTorch](https://github.com/dongheehand/SRGAN-PyTorch.git)
-<p/>다음의 깃허브 레포지토리를 복제하면된다.</p>
+<br>다음의 깃허브 레포지토리를 복제하면된다.
 
 ```
 git clone https://github.com/dongheehand/SRGAN-PyTorch.git
@@ -70,10 +70,10 @@ python train_niqe.py -opt options/train/train_RankSRGAN.yml
 ## How to use Metrics 
 ### Sources
  LPIPS, FID, NIQE, MA, MUSIQ, NIMA, DBCNN, WaDIQaM, BRISQUE, PI 등의 이미지 품질 평가 지표 소스는 다음 링크에서 받을 수 있다.
- IQA-Pytorch install  [chaofengc/IQA-PyTorch: PyTorch Toolbox for Image Quality Assessment, including LPIPS, FID, NIQE, NRQM(Ma), MUSIQ, NIMA, DBCNN, WaDIQaM, BRISQUE, PI and more... (github.com)](https://github.com/chaofengc/IQA-PyTorch)
- 본 프로젝트에서는 LPIPS 코드를 다음 링크에서 따와 사용하였다. 
- - lpips-pytorch install 
- [S-aiueo32/lpips-pytorch: A simple and useful implementation of LPIPS. (github.com)](https://github.com/S-aiueo32/lpips-pytorch)
+ <br>IQA-Pytorch install  [chaofengc/IQA-PyTorch: PyTorch Toolbox for Image Quality Assessment, including LPIPS, FID, NIQE, NRQM(Ma), MUSIQ, NIMA, DBCNN, WaDIQaM, BRISQUE, PI and more... (github.com)](https://github.com/chaofengc/IQA-PyTorch)
+ <br> 본 프로젝트에서는 LPIPS 코드를 다음 링크에서 따와 사용하였다. 
+ <br> - lpips-pytorch install 
+ <br> [S-aiueo32/lpips-pytorch: A simple and useful implementation of LPIPS. (github.com)](https://github.com/S-aiueo32/lpips-pytorch)
 
 ### save_metrics.py
  원본 고화질 영상과 복원시킨 영상이 저장된 파일 경로를 각각 hrdirroot, srdirroot에 적어주고 metric 수치를 기록할 csv파일 경로를 save_dir에 입력해주면 된다.
