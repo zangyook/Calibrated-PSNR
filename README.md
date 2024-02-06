@@ -80,34 +80,34 @@ python test.py -opt options/test/test_RankSRGAN.yml
 5. 결과는 './results' 폴더에 저장된다.
 
 ### Train Ranker
-1. Rank 데이터셋을 생성  [./datasets/generate_rankdataset/](datasets/generate_rankdataset)
-2.다음과 같은 명령어를 입력하라.
+1. Rank 데이터셋 생성  [./datasets/generate_rankdataset/](datasets/generate_rankdataset)
+2. 명령어 입력
 ```c++
 python train_rank.py -opt options/train/train_Ranker.yml
 ```
 
 ### Train RankSRGAN
 
-1. 구성파일에서 팡리 목적에 맞게 수정한다.  `options/train/train_RankSRGAN.json`
-2. 다음의 명령어를 입력하면 된다.
+1. 구성파일에서 파일 목적에 맞게 수정  `options/train/train_RankSRGAN.json`
+2. 명령어 입력
 ```c++
 python train_niqe.py -opt options/train/train_RankSRGAN.yml
 ```
 
 ## PULSE 
- 논문 저자의 github 소스를 사용하였다. 사용 방법은 링크의 Readme.md 를 이용하면 된다.
+ 논문 저자의 github 소스를 사용하였습니다. 사용 방법은 링크의 Readme.md 를 참조할 수 있습니다.
  [adamian98/pulse](https://github.com/adamian98/pulse)
 
 ## How to use Metrics 
 ### Sources
  LPIPS, FID, NIQE, MA, MUSIQ, NIMA, DBCNN, WaDIQaM, BRISQUE, PI 등의 이미지 품질 평가 지표 소스는 다음 링크에서 받을 수 있다.
  <br>IQA-Pytorch install  [chaofengc/IQA-PyTorch: PyTorch Toolbox for Image Quality Assessment, including LPIPS, FID, NIQE, NRQM(Ma), MUSIQ, NIMA, DBCNN, WaDIQaM, BRISQUE, PI and more... (github.com)](https://github.com/chaofengc/IQA-PyTorch)
- <br> 본 프로젝트에서는 LPIPS 코드를 다음 링크에서 따와 사용하였다. 
+ <br> 본 프로젝트에서는 LPIPS 코드를 다음 링크에서 따와 사용하였습니다. 
  <br> - lpips-pytorch install 
  <br> [S-aiueo32/lpips-pytorch: A simple and useful implementation of LPIPS. (github.com)](https://github.com/S-aiueo32/lpips-pytorch)
 
 ### save_metrics.py
- 원본 고화질 영상과 복원시킨 영상이 저장된 파일 경로를 각각 hrdirroot, srdirroot에 적어주고 metric 수치를 기록할 csv파일 경로를 save_dir에 입력해주면 된다.
+ 원본 고화질 영상과 복원시킨 영상이 저장된 파일 경로를 각각 hrdirroot, srdirroot에 적어주고 metric 수치를 기록할 csv파일 경로를 save_dir에 입력해주면 됩니다.
 
 
 # Calibrated-PSNR_2022_12
