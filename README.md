@@ -19,7 +19,7 @@ PSNR 지표와 제안한 평가지표를 비교하면, SRResNet과 SRGAN 간의 
 
 # How to use Calibrated-PSNR metric
 ### How to Use 
-``
+```
 python Proposed_metric.py
 ```
 
