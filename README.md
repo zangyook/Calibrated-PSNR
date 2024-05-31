@@ -1,19 +1,26 @@
-# Machine Learning(2) Team_Project+2022_12 (김정연, 여동규, 이예랑, 홍준서)
+# 2022 Fall: Machine Learning(2) Team_Project 
 #
-## How to use Metrics 
-### Sources
-LPIPS, FID, NIQE, MA, MUSIQ, NIMA, DBCNN, WaDIQaM, BRISQUE, PI 등의 이미지 품질 평가 지표 소스는 다음 링크에서 받을 수 있다.
-IQA-Pytorch install
-[chaofengc/IQA-PyTorch: PyTorch Toolbox for Image Quality Assessment, including LPIPS, FID, NIQE, NRQM(Ma), MUSIQ, NIMA, DBCNN, WaDIQaM, BRISQUE, PI and more... (github.com)](https://github.com/chaofengc/IQA-PyTorch)
-본 프로젝트에서는 LPIPS 코드를 다음 링크에서 따와 사용하였다. 
-- lpips-pytorch install 
-[S-aiueo32/lpips-pytorch: A simple and useful implementation of LPIPS. (github.com)](https://github.com/S-aiueo32/lpips-pytorch)
+# What is Calibrated-PSNR? 
+### Abstract 
+ SISR(Single Image Super Resolution)에서 적대적 생성모델(Generative adversarial networks) 기반의 알고리즘은 이외의 알고리즘보다 일반적으로 평가점수에서는 밀리지만 사람이 인지하기에는 차이가 없거나 오히려 더 좋을 수 있다. 이러한 현상은 기존 평가지표들의 평가방식에 어느정도 문제점이 있다는 것을 의미한다. 특히 PSNR은 픽셀 단위로 계산하며 MSE가 낮을 수록 좋기 때문에 MSE가 아닌 손실함수를 사용하는 GAN 알고리즘들은 기본적으로 감점요인을 가지고 있을 수 밖에서 없다. 따라서 우리는 GAN 기반의 알고리즘의 특성을 어느정도 고려한 새로운 평가지표 Calibrated_PSNR을 제안한다.
 
-### Metrics
-- metrics.py 파일을 이용하여 결과를 내면 된다.
-- save_metrics.py
- 원본 고화질 영상과 복원시킨 영상이 저장된 파일 경로를 각각 hrdirroot, srdirroot에 적어주고 metric 수치를 기록할 csv파일 경로를 save_dir에 입력해주면 된다.
+### Method 
+아래 표와 그림을 통해 SRResNet 모델이 SRGAN 모델보다 단색 공간에서 더 높은 PSNR 점수를 받는다는 것을 확인할 수 있다. (1번은 단색 이미지의 좌측 상단, 2번은 우측 상단, 3번은 좌측 하단, 4번은 우측 하단 이미지이다.)
+이를 개선하기 위해 Calibrated-PSNR에서는 이미지를 32*32로 등분한 후 각 블록의 PSNR 점수가 35 이상인 경우 배제하여 PSNR을 구한다. 
+![image](https://github.com/zangyook/Calibrated-PSNR/assets/100524867/295ae1e4-ff2d-4012-bc6b-2c0a4f6719e7)
+![image](https://github.com/zangyook/Calibrated-PSNR/assets/100524867/cddd0872-98d3-459e-a445-356fc5ab3aec)
 
+### Results 
+PSNR 지표와 제안한 평가지표를 비교하면, SRResNet과 SRGAN 간의 차이가 줄어든 것을 확인할 수 있다. Calibrated-PSNR 방법론을 통해 단색 공간의 영향력을 줄일 수 있다. 
+![image](https://github.com/zangyook/Calibrated-PSNR/assets/100524867/80987054-e59a-4245-9c41-5a0916efe9f6)
+
+
+# How to use Calibrated-PSNR metric
+### How to Use 
+- Proposed_metric.py 파일 이용.
+- SR root와 HR root 경로를 바꾸어 이용하면 된다.
+
+# Implement details
 ## Dataset 
  다음 링크에서 다운로드 받을 수 있다.
 ### Train
@@ -95,25 +102,17 @@ python train_niqe.py -opt options/train/train_RankSRGAN.yml
 ```
 
 ## PULSE 
- 논문 저자의 github 소스를 사용하였습니다. 사용 방법은 링크의 Readme.md 를 참조할 수 있습니다.
+ 논문 저자의 github 소스를 사용하였다. 사용 방법은 링크의 Readme.md 를 참조할 수 있다.
  [adamian98/pulse](https://github.com/adamian98/pulse)
 
-## How to use Metrics 
-### Sources
- LPIPS, FID, NIQE, MA, MUSIQ, NIMA, DBCNN, WaDIQaM, BRISQUE, PI 등의 이미지 품질 평가 지표 소스는 다음 링크에서 받을 수 있다.
- <br>IQA-Pytorch install  [chaofengc/IQA-PyTorch: PyTorch Toolbox for Image Quality Assessment, including LPIPS, FID, NIQE, NRQM(Ma), MUSIQ, NIMA, DBCNN, WaDIQaM, BRISQUE, PI and more... (github.com)](https://github.com/chaofengc/IQA-PyTorch)
- <br> 본 프로젝트에서는 LPIPS 코드를 다음 링크에서 따와 사용하였습니다. 
- <br> - lpips-pytorch install 
- <br> [S-aiueo32/lpips-pytorch: A simple and useful implementation of LPIPS. (github.com)](https://github.com/S-aiueo32/lpips-pytorch)
+ ### Sources
+LPIPS, FID, NIQE, MA, MUSIQ, NIMA, DBCNN, WaDIQaM, BRISQUE, PI 등의 이미지 품질 평가 지표 소스는 다음 링크에서 받을 수 있다.
+IQA-Pytorch install
+[chaofengc/IQA-PyTorch: PyTorch Toolbox for Image Quality Assessment, including LPIPS, FID, NIQE, NRQM(Ma), MUSIQ, NIMA, DBCNN, WaDIQaM, BRISQUE, PI and more... (github.com)](https://github.com/chaofengc/IQA-PyTorch)
+본 프로젝트에서는 LPIPS 계산을 위해 다음을 참조하였다.
+- lpips-pytorch install 
+[S-aiueo32/lpips-pytorch: A simple and useful implementation of LPIPS. (github.com)](https://github.com/S-aiueo32/lpips-pytorch)
 
 ### save_metrics.py
- 원본 고화질 영상과 복원시킨 영상이 저장된 파일 경로를 각각 hrdirroot, srdirroot에 적어주고 metric 수치를 기록할 csv파일 경로를 save_dir에 입력해주면 됩니다.
+ 원본 고화질 영상과 복원시킨 영상이 저장된 파일 경로를 각각 hrdirroot, srdirroot에 적어주고 metric 수치를 기록할 csv파일 경로를 save_dir에 입력해주면 된다.
 
-
-# Calibrated-PSNR_2022_12
-### How to Use 
-- Proposed_metric.py 파일 이용.
-- SR root와 HR root 경로를 바꾸어 이용하면 된다.
- 
- ## Comments
- 연락처는  다음과 같다. yerang@seoultech.ac.kr
